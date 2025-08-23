@@ -1,0 +1,13 @@
+name: Pipeline CI/CD
+on:
+    workflow_dispatch:
+jobs:
+    build:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Checkout code
+              uses: actions/checkout@v2
+            - name: Instalar dependencias
+              run: npm install
+            - name: Executar testes
+              run: npm test
